@@ -16,36 +16,59 @@ Here are the data for the project:
 https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip 
 
 You should create one R script called run_analysis.R that does the following. 
-	Merges the training and the test sets to create one data set.
-	Extracts only the measurements on the mean and standard deviation for each measurement. 
-	Uses descriptive activity names to name the activities in the data set
-	Appropriately labels the data set with descriptive variable names. 
-	From the data set in step 4, creates a second, independent tidy data set with the average of each variable for each activity and each subject.
+
+1. Merges the training and the test sets to create one data set.
+2. Extracts only the measurements on the mean and standard deviation for each measurement. 
+3. Uses descriptive activity names to name the activities in the data set
+4. Appropriately labels the data set with descriptive variable names. 
+5. From the data set in step 4, creates a second, independent tidy data set with the average of each variable for each activity and each subject.
 
 ----------------------
 
 The dataset was downloaded and the zip was exploded out to the dataset files.
 
-The directory structure is as follows:
+The directory structure is as follows (bold indicates directory instead of file):
 
-bhinks$ ls
-README.md					UCI HAR Dataset
-getdata-projectfiles-UCI HAR Dataset.zip	run_analysis.R
-wearable_tidy_data.txt				working_data_set.csv
-code_book
-
-bhinks$ ls UCI\ HAR\ Dataset/
-README.txt		activity_labels.txt	features.txt		features_info.txt
-test			train
-
-bhinks$ ls UCI\ HAR\ Dataset/test
-Inertial Signals	X_test.txt		subject_test.txt	y_test.txt
-
-bhinks$ ls UCI\ HAR\ Dataset/train
-Inertial Signals	X_train.txt		subject_train.txt	y_train.txt
-
+> bhinks$ ls
+> 
+| | |
+| --------- | --------------- |
+| README.md | **UCI HAR Dataset** |
+| getdata-projectfiles-UCI HAR Dataset.zip | run_analysis.R |
+| wearable_tidy_data.txt | working_data_set.csv |
+| CodeBook.md | |
+<br><br>
+>bhinks$ ls UCI\ HAR\ Dataset/
+>
+| | |
+| ------- | ------ |
+| README.txt | activity_labels.txt |
+| features.txt | features_info.txt |
+| **test** | **train** |
+<br><br>
+>bhinks$ ls UCI\ HAR\ Dataset/test
+>
+| | |
+| ----- | ----- |
+| **Inertial Signals** | X_test.txt |
+| subject_test.txt | y_test.txt |
+<br><br>
+>bhinks$ ls UCI\ HAR\ Dataset/train
+>
+| | | 
+| ----- | ----- |
+| **Inertial Signals** | X_train.txt |
+| subject_train.txt | y_train.txt |
+<br><br>
 
 The run_analysis.R file contains the R code to build the working dataset from the various files in the top level, test and train directories.
 
 Note that in the run_analysis.R file, the working directory was set to the top level directory containing the README.md, run_analysis, and "UCI\ HAR\ Dataest" files and directories.
 
+The two output files from the run_analysis.R are:
+
++ working_data_set.csv
+  + This csv file contains the dataset built by merging all of the information form the input files. From the course description, this dataset is what was produced by working through step four.
+<br><br>
++ wearable_tidy_data.txt
+  + This is the tidy dataset built from step five.
